@@ -1,0 +1,31 @@
+uuid: c34af8b6-ae3d-4360-a3de-05fab6c18b7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.ms_forms.field_media_in_library
+    - field.field.media.ms_forms.field_media_media_embed_field
+    - media.type.ms_forms
+id: media.ms_forms.media_library
+targetEntityType: media
+bundle: ms_forms
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  field_media_media_embed_field: true
+  langcode: true
+  moderation_state: true
+  path: true
+  status: true
+  uid: true

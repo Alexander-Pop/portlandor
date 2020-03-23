@@ -1,0 +1,33 @@
+uuid: e91d45db-0b39-4c9c-a8a8-e8b2f45ef9eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.ms_forms.field_media_in_library
+    - field.field.media.ms_forms.field_media_media_embed_field
+    - media.type.ms_forms
+  module:
+    - media_embed_field
+id: media.ms_forms.default
+targetEntityType: media
+bundle: ms_forms
+mode: default
+content:
+  field_media_media_embed_field:
+    label: visually_hidden
+    weight: 0
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: media_embed_field_media
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

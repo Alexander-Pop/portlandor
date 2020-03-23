@@ -1,0 +1,15 @@
+uuid: ed563e2f-7bee-477c-ab9a-4de6cb0b6c44
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_embed_media
+id: ms_forms
+label: 'MS Forms'
+description: ''
+source: media_embed_field
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_media_embed_field
+field_map: {  }

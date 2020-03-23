@@ -8,16 +8,18 @@ dependencies:
     - core.entity_view_mode.media.embedded_50
     - entity_browser.browser.chart_browser_embed
     - media.type.chart
+    - media.type.ms_forms
   module:
     - entity_embed
     - media
-label: 'Insert chart'
+label: 'Insert chart and forms'
 id: chart_browser
 type_id: entity
 type_settings:
   entity_type: media
   bundles:
     - chart
+    - ms_forms
   display_plugins:
     - 'view_mode:media.embedded'
     - 'view_mode:media.embedded_100'
