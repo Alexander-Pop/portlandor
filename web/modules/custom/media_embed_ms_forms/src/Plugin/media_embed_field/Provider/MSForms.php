@@ -19,16 +19,16 @@ class MSForms extends ProviderPluginBase {
    */
   public static function getIdFromInput($input) {
     // Extract form URL from iframe embed code
-    // preg_match('/^<iframe src="https?:\/\/(forms)\.office\.com\/Pages\/ResponsePage.aspx\/(?<id>[^"]+\?[^"]*:embed=(true|yes|y|1)[^"]*)".+<\/iframe>$/', trim($input), $matches);
-    // if (isset($matches['id'])) {
-    //   return md5($matches['id']);
-    // }
-    
-    // Standard MS Form embed URL
-    preg_match('/^https:\/\/forms\.office\.com\/Pages\/ResponsePage\.aspx\?id=.*$/', $input, $matches);
+    preg_match('/^https?:\/\/forms\.office\.com\/Pages\/ResponsePage.aspx\?id=(?<id>.*)$/', trim($input), $matches);
     if (isset($matches['id'])) {
       return md5($matches['id']);
     }
+    
+    // Standard MS Form embed URL
+    // preg_match('/^https:\/\/forms\.office\.com\/Pages\/ResponsePage\.aspx\?id=.*$/', $input, $matches);
+    // if (isset($matches['id'])) {
+    //   return md5($matches['id']);
+    // }
 
     // Provided input didn't match any allowed format so reject it
     return FALSE;
@@ -43,16 +43,23 @@ class MSForms extends ProviderPluginBase {
    * @return string
    *   The source URL of the map.
    */
-  // public static function getUrlFromInput($input) {
-    // // Extract form URL from iframe embed code
-    // preg_match('/^<iframe src="(?<url>https?:\/\/(online|public)\.tableau\.com\/[^"]+\?[^"]*:embed=(true|yes|y|1)[^"]*)".+<\/iframe>$/', trim($input), $matches);
-    // if (isset($matches['url'])) {
-    //   return $matches['url'];
-    // }
-    
-    // // Provided input was URL so just return input
-    // return $input;
-  // }
+  public static function getUrlFromInput($input) {
+    // Extract form URL from iframe embed code
+    // public static function getUrlFromInput($input) {
+      // // Extract form URL from iframe embed code
+      // preg_match('/^<iframe src="(?<url>https?:\/\/(online|public)\.tableau\.com\/[^"]+\?[^"]*:embed=(true|yes|y|1)[^"]*)".+<\/iframe>$/', trim($input), $matches);
+      // if (isset($matches['url'])) {
+        //   return $matches['url'];
+        // }
+        
+        // preg_match('/^(?<url>https:\/\/forms\.office\.com\/Pages\/ResponsePage\.aspx\?id=.*)$/', trim($input), $matches);
+        // if (isset($matches['url'])) {
+        //   return $matches['url'];
+        // }
+        
+    // Provided input was URL so just return input
+    return $input;
+  }
 
   /**
    * {@inheritdoc}
