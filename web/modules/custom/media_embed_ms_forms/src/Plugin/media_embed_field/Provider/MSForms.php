@@ -25,7 +25,7 @@ class MSForms extends ProviderPluginBase {
     // }
     
     // Standard MS Form embed URL
-    preg_match('/^https:\/\/forms\.office\.com\/Pages\/ResponsePage\.aspx\?id=CHhtY8lzp0GXqoxHM2QhQWRcPKM_tKhNkTzQQ-Kbj6hUOVNSNUxLT0NUR0FYRE1MQkMzM0k0RVZMQS4u$/', $input, $matches);
+    preg_match('/^https:\/\/forms\.office\.com\/Pages\/ResponsePage\.aspx\?id=.*$/', $input, $matches);
     if (isset($matches['id'])) {
       return md5($matches['id']);
     }
